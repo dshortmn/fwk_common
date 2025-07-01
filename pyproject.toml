@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 version = "2025.7.1-001"
-name = "dps_common"
+name = "fwk_common"
 dependencies = []
 requires-python = ">= 3.8"
 authors = [
@@ -13,13 +13,13 @@ authors = [
 maintainers = [
   {name = "Dan Short", email = "dshort@cossmn.cossmn"}
 ]
-description = "Common function Library"
+description = "Framework Common function Library"
 readme = "README.md"
 license = "GPL-3.0-or-later"
 keywords= []
 [project.urls]
-Homepage = "https://github.com/dshortmn/common"
-"Bug Tracker" = "https://github.com/dshortmn/common/issues"
+Homepage = "https://github.com/dshortmn/fwk_common"
+"Bug Tracker" = "https://github.com/dshortmn/fwk_common/issues"
 
 [tool.setuptools.packages.find]
 where = ["."] # Specify where Setuptools should look for packages
