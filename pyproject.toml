@@ -17,18 +17,9 @@ description = "Common function Library"
 readme = "README.md"
 license = "GPL-3.0-or-later"
 keywords= []
-classifiers = [
-  "Development Status :: 4 - Beta",
-  "Intended Audience :: Developers",
-  "Programming Language :: Python :: 3",
-  "Programming Language :: Python :: 3.8",
-  "Programming Language :: Python :: 3.9",
-  "Programming Language :: Python :: 3.10",
-  "Programming Language :: Python :: 3.11",
-]
 [project.urls]
 Homepage = "https://github.com/dshortmn/common"
 "Bug Tracker" = "https://github.com/dshortmn/common/issues"
 
 [tool.setuptools.packages.find]
-where = ["src"] # Specify where Setuptools should look for packages
+where = ["."] # Specify where Setuptools should look for packages
