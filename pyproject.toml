@@ -27,3 +27,5 @@ classifiers = [
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
 ]
+[tool.setuptools.packages.find]
+where = ["src"] # Specify where Setuptools should look for packages
