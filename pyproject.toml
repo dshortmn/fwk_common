@@ -1,0 +1,18 @@
+[build-system]
+requires = ["hatchling >= 1.26"]
+build-backend = "hatchling.build"
+
+[project]
+dynamic = ["version"]
+name = "dps-common"
+dependencies = []
+requires-python = ">= 3.8"
+authors = [
+  {name = "Dan Short", email = "dshort@cossmn.cossmn"}
+]
+maintainers = [
+  {name = "Dan Short", email = "dshort@cossmn.cossmn"}
+]
+description = "Common function Library"
+readme = "README.md"
+license = "GPL-3.0-or-later"
