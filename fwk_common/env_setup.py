@@ -20,6 +20,7 @@ def GetCallingPath(steps=1):
     caller_frame = inspect.stack()[steps]
     # Extract the filename from the frame information
     caller_filepath = caller_frame.filename
+
     # Clean up the frame reference to avoid memory leaks
     del caller_frame
     return path.abspath(caller_filepath)
@@ -30,6 +31,7 @@ def GetConfigPathInfo(inPath=None):
         absolute_path = GetCallingPath(2)
     else:
         absolute_path = path.abspath(inPath)
+    print(f"GetConfigPathInfo: absolute_path = {absolute_path}")
     directory_path = path.dirname(absolute_path)
     config_path = path.join(directory_path, "config")
     sql_path = path.join(directory_path, "sql")
