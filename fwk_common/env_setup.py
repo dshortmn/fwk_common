@@ -14,6 +14,7 @@ def stack_size(stack):
 
 def GetCallingPath(steps=1):
     xsize = stack_size(inspect.stack())
+    print(f"GetCallingPath: stack size = {xsize}, steps = {steps}")
     if steps < 1 or steps >= xsize:
         raise ValueError(f"steps must be between 1 and {xsize - 1}, got {steps}")
     caller_frame = inspect.stack()[steps]
