@@ -2,7 +2,20 @@ import inspect
 from os import path
 
 
+def stack_size(stack):
+    if not isinstance(stack, list):
+        raise TypeError("stack must be a list")
+    if not all(isinstance(item, str) for item in stack):
+        raise TypeError("all items in stack must be strings")
+    if not stack:
+        return 0
+    return len(stack)
+
+
 def GetCallingPath(steps=1):
+    xsize = stack_size(inspect.stack())
+    if steps < 1 or steps >= xsize:
+        raise ValueError(f"steps must be between 1 and {xsize - 1}, got {steps}")
     caller_frame = inspect.stack()[steps]
     # Extract the filename from the frame information
     caller_filepath = caller_frame.filename
