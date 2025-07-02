@@ -27,13 +27,7 @@ def GetCallingPath(steps=1):
 
 def GetConfigPathInfo(inPath=None):
     if inPath is None:
-        # caller_frame = inspect.stack()[1]
-        # Extract the filename from the frame information
-        # caller_filepath = caller_frame.filename
-        # Clean up the frame reference to avoid memory leaks
-        # del caller_frame
         absolute_path = GetCallingPath(2)
-        # absolute_path = path.abspath(caller_filepath)
     else:
         absolute_path = path.abspath(inPath)
 
