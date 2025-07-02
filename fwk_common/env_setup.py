@@ -30,9 +30,15 @@ def GetConfigPathInfo(inPath=None):
         absolute_path = GetCallingPath(2)
     else:
         absolute_path = path.abspath(inPath)
-
     directory_path = path.dirname(absolute_path)
     config_path = path.join(directory_path, "config")
     sql_path = path.join(directory_path, "sql")
-
+    if not path.exists(config_path):
+        raise FileNotFoundError(f"Config path does not exist: {config_path}")
+    if not path.exists(sql_path):
+        raise FileNotFoundError(f"SQL path does not exist: {sql_path}")
+    if not path.isdir(config_path):
+        raise NotADirectoryError(f"Config path is not a directory: {config_path}")
+    if not path.isdir(sql_path):
+        raise NotADirectoryError(f"SQL path is not a directory: {sql_path}")
     return config_path, sql_path
