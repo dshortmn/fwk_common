@@ -39,11 +39,13 @@ def GetConfigPathInfo(inPath=None):
     config_path = path.join(directory_path, "config")
     sql_path = path.join(directory_path, "sql")
     if not path.exists(config_path):
-        raise FileNotFoundError(f"Config path does not exist: {config_path}")
+        raise FileNotFoundError(f"Config directory does not exist: {config_path}")
     if not path.exists(sql_path):
-        raise FileNotFoundError(f"SQL path does not exist: {sql_path}")
-    if not path.isdir(config_path):
-        raise NotADirectoryError(f"Config path is not a directory: {config_path}")
-    if not path.isdir(sql_path):
-        raise NotADirectoryError(f"SQL path is not a directory: {sql_path}")
-    return config_path, sql_path
+        raise FileNotFoundError(f"SQL directory does not exist: {sql_path}")
+    config_file = path.join(config_path, module_name + ".yaml")
+    sql_file = path.join(sql_path, module_name + ".sql")
+    if not path.exists(config_file):
+        raise FileNotFoundError(f"Config file does not exist: {config_file}")
+    if not path.exists(sql_file):
+        raise FileNotFoundError(f"SQL file does not exist: {sql_file}")
+    return config_file, sql_file
