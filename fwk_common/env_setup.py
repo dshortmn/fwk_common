@@ -21,7 +21,7 @@ def GetCallingPath(steps=1):
     # Extract the filename from the frame information
     caller_filepath = caller_frame.filename
 
-    # Clean up the frame reference to avoid memory leaks
+    # Clean up the frame reference to avoid memory leaks 1
     del caller_frame
     return path.abspath(caller_filepath)
 
