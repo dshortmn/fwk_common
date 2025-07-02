@@ -5,8 +5,8 @@ from os import path
 def stack_size(stack):
     if not isinstance(stack, list):
         raise TypeError("stack must be a list")
-    if not all(isinstance(item, str) for item in stack):
-        raise TypeError("all items in stack must be strings")
+    if not all(isinstance(item, object) for item in stack):
+        raise TypeError("all items in stack must be object")
     if not stack:
         return 0
     return len(stack)
