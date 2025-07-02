@@ -1,27 +1,23 @@
 import inspect
-from os import getcwd, path
+from os import path
 
 
-def GetCommonPath():
-    current_directory = getcwd()
-    return current_directory
-
-
-def GetCurrentPath():
-    current_directory = __file__  # .rsplit('/', 2)[0]
-    return current_directory
-
-
-def GetPathInfo():
-    # inspect.stack()[1] gets the frame of the direct caller
+def GetCallingPath():
     caller_frame = inspect.stack()[1]
     # Extract the filename from the frame information
     caller_filepath = caller_frame.filename
-    # Make the path absolute
-    absolute_path = path.abspath(caller_filepath)
+    del caller_frame
+    return path.abspath(caller_filepath)
+
+
+def GetConfigPathInfo(inPath=None):
+    if inPath is None:
+        absolute_path = GetCallingPath()
+    else:
+        absolute_path = path.abspath(inPath)
+
     directory_path = path.dirname(absolute_path)
     config_path = path.join(directory_path, "config")
     sql_path = path.join(directory_path, "sql")
-    del caller_frame
 
     return config_path, sql_path
