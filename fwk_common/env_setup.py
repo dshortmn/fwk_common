@@ -46,6 +46,4 @@ def GetConfigPathInfo(inPath=None):
     sql_file = path.join(sql_path, module_name + ".sql")
     if not path.exists(config_file):
         raise FileNotFoundError(f"Config file does not exist: {config_file}")
-    if not path.exists(sql_file):
-        raise FileNotFoundError(f"SQL file does not exist: {sql_file}")
     return config_file, sql_file
