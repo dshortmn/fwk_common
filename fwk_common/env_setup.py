@@ -31,7 +31,10 @@ def GetConfigPathInfo(inPath=None):
         absolute_path = GetCallingPath(2)
     else:
         absolute_path = path.abspath(inPath)
-    print(f"GetConfigPathInfo: absolute_path = {absolute_path}")
+    module_name = path.splitext(path.basename(absolute_path))[0]
+    print(
+        f"GetConfigPathInfo: absolute_path = {absolute_path} module_name = {module_name}"
+    )
     directory_path = path.dirname(absolute_path)
     config_path = path.join(directory_path, "config")
     sql_path = path.join(directory_path, "sql")
