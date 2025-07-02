@@ -2,21 +2,24 @@ import inspect
 from os import path
 
 
-def GetCallingPath():
-    caller_frame = inspect.stack()[1]
+def GetCallingPath(steps=1):
+    caller_frame = inspect.stack()[steps]
     # Extract the filename from the frame information
     caller_filepath = caller_frame.filename
+    # Clean up the frame reference to avoid memory leaks
     del caller_frame
     return path.abspath(caller_filepath)
 
 
 def GetConfigPathInfo(inPath=None):
     if inPath is None:
-        caller_frame = inspect.stack()[1]
+        # caller_frame = inspect.stack()[1]
         # Extract the filename from the frame information
-        caller_filepath = caller_frame.filename
-        del caller_frame
-        absolute_path = path.abspath(caller_filepath)
+        # caller_filepath = caller_frame.filename
+        # Clean up the frame reference to avoid memory leaks
+        # del caller_frame
+        absolute_path = GetCallingPath(2)
+        # absolute_path = path.abspath(caller_filepath)
     else:
         absolute_path = path.abspath(inPath)
 
