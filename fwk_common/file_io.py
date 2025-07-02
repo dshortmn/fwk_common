@@ -10,10 +10,8 @@ def load_yaml(filename):
             raise ValueError(f"YAML file {filename} does not contain a dictionary")
         if not data:
             raise ValueError(f"YAML file {filename} is empty")
-
-        # for key, value in yaml.load(file, yaml.SafeLoader).iteritems():
-        #    print(f" {key=} , {value=}")
-        #    if data.get(key) is not None:
-        #        raise ValueError(f"Duplicate key found: {key}")
-        #    data[key] = value
+    if not data:
+        raise ValueError(
+            f"YAML file {filename} is empty or does not contain valid data"
+        )
     return data
