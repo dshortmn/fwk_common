@@ -5,7 +5,7 @@ def load_yaml(filename):
     """Load a YAML file and return its contents."""
     data = {}
     with open(filename, "r") as file:
-        for key, value in yaml.load(file, loader=yaml.SafeLoader).iteritems():
+        for key, value in yaml.load(file, yaml.SafeLoader).iteritems():
             print(f" {key=} , {value=}")
             if data.get(key) is not None:
                 raise ValueError(f"Duplicate key found: {key}")
