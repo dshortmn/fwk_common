@@ -66,8 +66,8 @@ def date_dict():
     prev_week = start_of_week - timedelta(days=7)
     prev_week_nr, prev_start_of_week, prev_end_of_week = week(prev_week)
     results["prev_week_nr"] = prev_week_nr
-    results["prev_week_start"] = prev_start_of_week
-    results["prev_week_end"] = prev_end_of_week
+    results["prev_week_start"] = prev_start_of_week.strftime("%Y-%m-%d")
+    results["prev_week_end"] = prev_end_of_week.strftime("%Y-%m-%d")
     results["prev_week_start_day_nr"] = prev_start_of_week.day
     results["prev_week_start_month_nr"] = prev_start_of_week.month
     results["prev_week_start_year_nr"] = prev_start_of_week.year
@@ -86,7 +86,7 @@ def date_dict():
     # Get the previous month start and end dates
     prev_month_start = curr_month_start - relativedelta(months=1)
     last_day = calendar.monthrange(prev_month_start.year, prev_month_start.month)[1]
-    prev_month_end = utc_date.replace(day=last_day)
+    prev_month_end = prev_month_start.replace(day=last_day)
     results["prev_month_start"] = prev_month_start.strftime("%Y-%m-%d")
     results["prev_month_end"] = prev_month_end.strftime("%Y-%m-%d")
     results["prev_month_nr"] = prev_month_start.month
