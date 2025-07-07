@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 version = "2025.7.1.1"
 name = "fwk_common"
-dependencies = ["PyYAML"]
+dependencies = ["PyYAML","python-dateutil","Jinja2"]
 requires-python = ">= 3.8"
 authors = [
   {name = "Dan Short", email = "dshort@cossmn.cossmn"}
