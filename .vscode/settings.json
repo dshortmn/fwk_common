@@ -1,0 +1,26 @@
+{
+    "deploy.reloaded": {
+        "packages": [
+            {
+                "name": "Version 2.3.4",
+                "description": "Package version 2.3.4",
+
+                "files": [
+                    "fwk_common/*.py",
+                ],
+                "deployOnSave": [ "local airflow" ],
+             
+            }        
+        ],
+
+        "targets": [
+            {
+                "type": "local",
+                "name": "local airflow",
+                "description": "Local Airflow folder",
+
+                "dir": "/home/dshor/airflow/dags",
+            }         
+        ]
+    }
+}
