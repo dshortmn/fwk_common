@@ -46,7 +46,7 @@ def date_dict():
     results["curr_day_month_nr"] = utc_date.month
     results["curr_day_year_nr"] = utc_date.year
     # Get the previous date
-    prev_date = timedelta(utc_date, days=-1)
+    prev_date = utc_date - timedelta(days=1)
     results["prev_date"] = prev_date.strftime("%Y-%m-%d")
     results["prev_day_nr"] = prev_date.day
     results["prev_day_month_nr"] = prev_date.month
