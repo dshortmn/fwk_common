@@ -1,5 +1,5 @@
 import calendar
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 from dateutil.relativedelta import relativedelta
 
@@ -40,7 +40,7 @@ def date_dict():
     """
     results = {}
     # Get the current date in UTC
-    utc_date = datetime.now.astimezone(tz=None)  # Convert to UTC if not already in UTC
+    utc_date = datetime.now(timezone.utc)  # Convert to UTC if not already in UTC
     results["curr_date"] = utc_date.strftime("%Y-%m-%d")
     results["curr_day_nr"] = utc_date.day
     results["curr_day_month_nr"] = utc_date.month
