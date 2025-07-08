@@ -53,7 +53,7 @@ def date_dict():
     results["prev_day_year_nr"] = str(prev_date.year)
     # Get the week number and start/end of the week
     week_nr, start_of_week, end_of_week = week(utc_date)
-    results["curr_week_nr"] = week_nr
+    results["curr_week_nr"] = str(week_nr)
     results["curr_start_of_week"] = start_of_week.strftime("%Y-%m-%d")
     results["curr_end_of_week"] = end_of_week.strftime("%Y-%m-%d")
     results["curr_week_start_day_nr"] = str(start_of_week.day)
