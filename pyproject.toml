@@ -3,7 +3,7 @@ requires = ["setuptools>=61.0.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-version = "2025.7.1.6"
+version = "2025.7.1.7"
 name = "fwk_common"
 dependencies = ["PyYAML","python-dateutil","Jinja2"]
 requires-python = ">= 3.8"
