@@ -102,7 +102,7 @@ def date_dict():
     prev_year_end = utc_date.replace(month=12, day=31) - relativedelta(years=1)
     results["prev_year_start"] = prev_year_start.strftime("%Y-%m-%d")
     results["prev_year_end"] = prev_year_end.strftime("%Y-%m-%d")
-    #
+    # Add nodash version of what we already have
     new_items_dict = {
         "nodash_" + key: value.replace("-", "") for key, value in results.items()
     }
